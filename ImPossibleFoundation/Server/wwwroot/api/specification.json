@@ -46,6 +46,38 @@
         }
       }
     },
+    "/api/Blog/{id}": {
+      "get": {
+        "tags": [
+          "Blog"
+        ],
+        "operationId": "Blog_GetArticleDetail",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "guid"
+            },
+            "x-position": 1
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ArticleDetailVm"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
     "/_configuration/{clientId}": {
       "get": {
         "tags": [
@@ -162,10 +194,6 @@
                 "type": "string",
                 "nullable": true
               },
-              "content": {
-                "type": "string",
-                "nullable": true
-              },
               "cover": {
                 "type": "string",
                 "nullable": true
@@ -179,9 +207,6 @@
                 "format": "double"
               },
               "isFeatured": {
-                "type": "boolean"
-              },
-              "selected": {
                 "type": "boolean"
               },
               "published": {
@@ -235,6 +260,53 @@
             "format": "guid"
           }
         }
+      },
+      "ArticleDetailVm": {
+        "allOf": [
+          {
+            "$ref": "#/components/schemas/FullAuditedEntityDtoOfGuid"
+          },
+          {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+              "title": {
+                "type": "string",
+                "nullable": true
+              },
+              "slug": {
+                "type": "string",
+                "nullable": true
+              },
+              "description": {
+                "type": "string",
+                "nullable": true
+              },
+              "content": {
+                "type": "string",
+                "nullable": true
+              },
+              "cover": {
+                "type": "string",
+                "nullable": true
+              },
+              "postViews": {
+                "type": "integer",
+                "format": "int32"
+              },
+              "rating": {
+                "type": "number",
+                "format": "double"
+              },
+              "isFeatured": {
+                "type": "boolean"
+              },
+              "selected": {
+                "type": "boolean"
+              }
+            }
+          }
+        ]
       },
       "WeatherForecast": {
         "type": "object",
