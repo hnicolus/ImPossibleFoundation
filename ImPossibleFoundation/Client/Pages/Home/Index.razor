@@ -1,0 +1,63 @@
+﻿@page "/"
+<MudGrid Spacing="2" Justify="Justify.Center">
+    <MudItem xs="12">
+        <Carousel Items="@slides" />
+    </MudItem>
+    <MudItem Class="mt-16" xs="12" sm="3">
+        <MudPaper Class="pa-4" MaxHeight="80">
+            <MudText Class="ma-4" Typo="Typo.h6">Served Over</MudText>
+            <MudText Typo="Typo.h5">1,432,805</MudText>
+            <MudText Typo="Typo.subtitle2">Children in 190 countries in the world</MudText>
+            <MudButton Class="ma-3" Variant="Variant.Filled" Color="Color.Primary">See Causes </MudButton>
+        </MudPaper>
+    </MudItem>
+    <MudItem Class="mt-16" xs="12" sm="3">
+        <MudPaper Class="pa-4" MaxHeight="80">
+            <MudText Class="ma-4" Typo="Typo.h6">Donate </MudText>
+            <MudText Typo="Typo.subtitle2">Even the all-powerful Pointing has no control about the blind texts.
+            </MudText>
+            <MudButton Class="ma-3" Variant="Variant.Filled" Color="Color.Primary">Donate </MudButton>
+        </MudPaper>
+    </MudItem>
+    <MudItem Class="mt-16" xs="12" sm="3">
+        <MudPaper Class="pa-4" MaxHeight="80">
+            <MudText Class="ma-4" Typo="Typo.h6">Be a Volunteer </MudText>
+            <MudText Typo="Typo.subtitle2">Even the all-powerful Pointing has no control about the blind texts.
+            </MudText>
+            <MudButton Class="ma-3" Variant="Variant.Filled" Color="Color.Primary">Be a Volunteer</MudButton>
+        </MudPaper>
+    </MudItem>
+    <MudItem>
+        <MudGrid Class="mt-12" Justify="Justify.Center">
+            <MudItem xs="12" Class="mx-auto my-4">
+                <MudText Align="Align.Center" Typo="Typo.h4">OUR CURRENT CAUSES</MudText>
+                <MudText Align="Align.Center" Typo="Typo.body1">Far far away, behind the word mountains, far from the
+                    countries Vokalia and
+                    Consonantia, there live the blind texts.</MudText>
+            </MudItem>
+            @for (var i = 1; i < 4; i++)
+            {
+                var image = $"/images/cause-{i}.jpg";
+                <MudItem xs="12" sm="4">
+                    <ImageCard Title="Hello World" Image="@image" Content="SomeCOntent goes here">
+                        <Actions>
+                            <MudProgressLinear Color="Color.Success" Value="60" Min="0" Max="100" />
+                            <MudButton Variant="Variant.Text" Color="Color.Primary">Share</MudButton>
+                            <MudButton Variant="Variant.Text" Color="Color.Primary">Learn More</MudButton>
+                        </Actions>
+                    </ImageCard>
+                </MudItem>
+            }
+        </MudGrid>
+    </MudItem>
+</MudGrid>
+@code{
+
+    SlideItemDto[] slides = new SlideItemDto[]
+        {
+new SlideItemDto{Label="Dress The Children", Content ="Some Description",Image="/images/bg_1.jpg"},
+new SlideItemDto{Label="Dress The Children", Content ="Some Description",Image="/images/bg_2.jpg"},
+new SlideItemDto{Label="Dress The Children", Content ="Some Description",Image="/images/bg_3.jpg"},
+new SlideItemDto{Label="Dress The Children", Content ="Some Description",Image="/images/bg_4.jpg"}
+        };
+}

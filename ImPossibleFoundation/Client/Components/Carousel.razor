@@ -1,0 +1,21 @@
+@if (Items != null)
+{
+    <MudCarousel ItemsSource="@Items" Style="height:400px;width:100%;margin-top:-80px" ShowArrows="true"
+    ShowDelimiters="false" AutoCycle="true" TData="SlideItemDto">
+        <ItemTemplate>
+            <div class="d-flex flex-column flex-column justify-center"
+            style="height:100% ; background-image:url(@context.Image);object-fit:cover;">
+                <MudOverlay DarkBackground="true" />
+                <MudText Align="Align.Center" Typo="Typo.h3" Color="Color.Primary">@context.Label</MudText>
+                <MudText Align="Align.Center" Typo="Typo.caption" Color="Color.Primary">@context.Content</MudText>
+                <MudButton Class="mx-auto my-2" Variant="Variant.Filled" Style="width:120px" Color="Color.Primary"
+                FullWidth="false">Read more
+                </MudButton>
+            </div>
+        </ItemTemplate>
+    </MudCarousel>
+}
+@code{
+
+    [Parameter] public IList<SlideItemDto> Items { get; set; }
+}

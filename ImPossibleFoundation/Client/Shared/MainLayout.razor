@@ -1,0 +1,53 @@
+﻿@inherits LayoutComponentBase
+<MudLayout>
+    <MudAppBar Elevation="1">
+        <MudIconButton Icon="@Icons.Material.Filled.Menu" Color="Color.Inherit" Edge="Edge.Start"
+            OnClick="@ToggleDrawer" />
+        <MudAppBarSpacer />
+        <MudMenu Color="Color.Inherit" Label="Support">
+            <MudMenuItem>Add Donation</MudMenuItem>
+            <MudMenuItem>View Donators</MudMenuItem>
+        </MudMenu>
+        <ThemeSelector />
+    </MudAppBar>
+    <MudDrawer @bind-Open="@open" Elevation="1">
+        <MudDrawerHeader>
+            <MudText Typo="Typo.h6">Im Possible Foundation</MudText>
+        </MudDrawerHeader>
+        <MudNavMenu>
+            @foreach (var menu in menuOptions)
+            {
+                <MudNavLink Match="NavLinkMatch.All" Color="Color.Inherit" Href="@menu.Value">@menu.Key</MudNavLink>
+            }
+        </MudNavMenu>
+    </MudDrawer>
+    <MudMainContent Class="pt-16 ">
+        <MudContainer Class="mt-6">
+            @Body
+            <MudPaper Width="100%" Elevation="0">
+                <Footer />
+            </MudPaper>
+        </MudContainer>
+    </MudMainContent>
+
+</MudLayout>
+
+
+@code{
+    bool open = false;
+    Dictionary<string, string> menuOptions = new();
+    protected override Task OnInitializedAsync()
+    {
+        menuOptions.Add("Home", "/");
+        menuOptions.Add("About", "/about");
+        @* menuOptions.Add("Donate", "/donate"); *@
+        @* menuOptions.Add("Blog", "/blog"); *@
+        menuOptions.Add("Contact", "/contact");
+        return base.OnInitializedAsync();
+    }
+
+    void ToggleDrawer()
+    {
+        open = !open;
+    }
+}

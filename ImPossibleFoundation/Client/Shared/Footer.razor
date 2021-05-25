@@ -1,0 +1,25 @@
+<MudGrid Justify="Justify.Center" Class="mt-8"> 
+    <MudItem xs="12" sm="3">
+        <MudText Typo="Typo.h5" Class="mt-6">About us</MudText>
+        <MudDivider DividerType="DividerType.Middle" Class="my-6"/>
+        <MudText>@AboutDescription</MudText>
+    <MudIconButton Icon="@Icons.Material.Filled.Facebook" Color="Color.Inherit" Class="rounded-0" />
+    <MudIconButton Icon="@Icons.Custom.Brands.Instagram" Color="Color.Inherit" Class="rounded-0" />
+    <MudIconButton Icon="@Icons.Custom.Brands.LinkedIn" Color="Color.Inherit" Class="rounded-0" />
+    <MudIconButton Icon="@Icons.Custom.Brands.Google" Color="Color.Inherit" Class="rounded-0" />
+    </MudItem>
+    <MudItem xs="12" sm="3">
+        <MudText Typo="Typo.h5" Class="mt-6">Recent Blogs</MudText>
+        <MudDivider DividerType="DividerType.Middle" Class="my-6"/>
+        <MudText>@AboutDescription</MudText>
+    </MudItem>
+        <MudItem xs="12" sm="3">
+        <MudText Typo="Typo.h5" Class="mt-6">Have a Question ?</MudText>
+        <MudDivider DividerType="DividerType.Middle" Class="my-6"/>
+        <MudText>@AboutDescription</MudText>
+    </MudItem>
+</MudGrid>
+
+@code{
+public string AboutDescription { get; set; } = "Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.";
+}
