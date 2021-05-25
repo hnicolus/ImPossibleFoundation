@@ -8,7 +8,7 @@ using ImPossibleFoundation.Data;
 using MediatR;
 using Microsoft.EntityFrameworkCore;
 
-namespace ImPossibleFoundation.Blog.Queries.GetArticleDetail
+namespace ImPossibleFoundation.Blog
 {
     public class GetArticleDetailsQuery : IRequest<ArticleDetailVm>
     {

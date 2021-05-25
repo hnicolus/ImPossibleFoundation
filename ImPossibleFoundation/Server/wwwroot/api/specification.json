@@ -78,6 +78,39 @@
         }
       }
     },
+    "/api/Blog/create": {
+      "post": {
+        "tags": [
+          "Blog"
+        ],
+        "operationId": "Blog_CreateArticle",
+        "requestBody": {
+          "x-name": "command",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/CreateArticleCommand"
+              }
+            }
+          },
+          "required": true,
+          "x-position": 1
+        },
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "string",
+                  "format": "guid"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
     "/_configuration/{clientId}": {
       "get": {
         "tags": [
@@ -297,16 +330,36 @@
               "rating": {
                 "type": "number",
                 "format": "double"
-              },
-              "isFeatured": {
-                "type": "boolean"
-              },
-              "selected": {
-                "type": "boolean"
               }
             }
           }
         ]
+      },
+      "CreateArticleCommand": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "title": {
+            "type": "string",
+            "nullable": true
+          },
+          "slug": {
+            "type": "string",
+            "nullable": true
+          },
+          "description": {
+            "type": "string",
+            "nullable": true
+          },
+          "content": {
+            "type": "string",
+            "nullable": true
+          },
+          "cover": {
+            "type": "string",
+            "nullable": true
+          }
+        }
       },
       "WeatherForecast": {
         "type": "object",

@@ -2,7 +2,7 @@ using System;
 using ImPossibleFoundation.Common.Mappings;
 using ImPossibleFoundation.Dtos;
 
-namespace ImPossibleFoundation.Blog.Queries.GetArticleDetail
+namespace ImPossibleFoundation.Blog
 {
     public class ArticleDetailVm : FullAuditedEntityDto<Guid>, IMapFrom<Article>
     {
@@ -13,7 +13,5 @@ namespace ImPossibleFoundation.Blog.Queries.GetArticleDetail
         public string Cover { get; set; }
         public int PostViews { get; set; }
         public double Rating { get; set; }
-        public bool IsFeatured { get; set; }
-        public bool Selected { get; set; }
     }
 }

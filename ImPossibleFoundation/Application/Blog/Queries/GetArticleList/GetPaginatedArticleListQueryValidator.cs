@@ -1,7 +1,7 @@
 using System;
 using FluentValidation;
 
-namespace ImPossibleFoundation.Blog.Queries.GetArticleList
+namespace ImPossibleFoundation.Blog
 {
     public class GetPaginatedArticleListQueryValidator : AbstractValidator<GetPaginatedArticleListQuery>
     {
