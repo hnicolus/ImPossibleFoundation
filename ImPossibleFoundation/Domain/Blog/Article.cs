@@ -28,9 +28,8 @@ namespace ImPossibleFoundation.Blog
         public int PostViews { get; set; }
         public double Rating { get; set; }
         public bool IsFeatured { get; set; }
-        public bool Selected { get; set; }
-
-        public DateTime Published { get; set; }
+        public bool IsPublished { get; set; }
+        public DateTime? Published { get; set; }
         public DateTime DateCreated { get; set; }
         public DateTime DateUpdated { get; set; }
         public List<DomainEvent> DomainEvents { get; set; } = new List<DomainEvent>();

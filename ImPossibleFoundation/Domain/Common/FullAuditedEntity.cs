@@ -10,8 +10,9 @@ namespace ImPossibleFoundation.Domain.Entities
     }
     public interface ISoftDelete
     {
-        DateTime Deleted { get; set; }
-        Guid DeletedBy { get; set; }
+        bool IsDeleted { get; set; }
+        DateTime? Deleted { get; set; }
+        Guid? DeletedBy { get; set; }
     }
 
     public interface IAuditable : IHasCreation
@@ -27,7 +28,8 @@ namespace ImPossibleFoundation.Domain.Entities
         public Guid? LastModifiedBy { get; set; }
         public DateTime Created { get; set; }
         public Guid CreatedBy { get; set; }
-        public DateTime Deleted { get; set; }
-        public Guid DeletedBy { get; set; }
+        public DateTime? Deleted { get; set; }
+        public Guid? DeletedBy { get; set; }
+        public bool IsDeleted { get; set; }
     }
 }

@@ -25,13 +25,15 @@ namespace ImPossibleFoundation.Controllers
             return await Mediator.Send(command);
         }
 
-        [HttpPut("update")]
-        public async Task<ActionResult<ArticleDetailVm>> UpdateArticleAsync(Guid id, [FromBody] UpdateArticleDetailsCommand command)
+        [HttpPut("{id}")]
+        public async Task<ActionResult> UpdateArticleAsync(Guid id,[FromBody] UpdateArticleDetailsCommand command)
         {
-            if (id != command.ArticleId)
-                return NotFound();
-            return await Mediator.Send(command);
+            
+            await Mediator.Send(command);
+            return NoContent();
         }
+
+        
 
     }
 

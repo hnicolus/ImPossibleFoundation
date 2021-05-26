@@ -31,6 +31,7 @@ namespace ImPossibleFoundation.Blog
         }
         public async Task<Guid> Handle(CreateArticleCommand request, CancellationToken cancellationToken)
         {
+            
             var article = Article.Create(request.Title, request.Description, request.Cover);
             article.Content = request.Content;
             article.Slug = request.Slug;

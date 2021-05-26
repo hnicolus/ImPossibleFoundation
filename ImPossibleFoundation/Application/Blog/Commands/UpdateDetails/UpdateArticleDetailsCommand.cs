@@ -8,16 +8,16 @@ using MediatR;
 
 namespace ImPossibleFoundation.Blog
 {
-    public class UpdateArticleDetailsCommand : IRequest<ArticleDetailVm>
+    public class UpdateArticleDetailsCommand : IRequest
     {
-        public Guid ArticleId { get; set; }
+        public Guid Id { get; set; }
         public string Title { get; set; }
         public string Description { get; set; }
         public string Content { get; set; }
         public string Cover { get; set; }
     }
 
-    public class UpdateArticleDetailsCommandHandler : IRequestHandler<UpdateArticleDetailsCommand, ArticleDetailVm>
+    public class UpdateArticleDetailsCommandHandler : IRequestHandler<UpdateArticleDetailsCommand>
     {
         private readonly IAppDbContext context;
         private readonly IMapper mapper;
@@ -27,13 +27,13 @@ namespace ImPossibleFoundation.Blog
             this.context = context;
             this.mapper = mapper;
         }
-        public async Task<ArticleDetailVm> Handle(UpdateArticleDetailsCommand request, CancellationToken cancellationToken)
+        public async Task<Unit> Handle(UpdateArticleDetailsCommand request, CancellationToken cancellationToken)
         {
 
-            var article = await context.Articles.FindAsync(request.ArticleId);
+            var article = await context.Articles.FindAsync(request.Id);
 
             if (article == null)
-                throw new NotFoundException(nameof(Article), request.ArticleId);
+                throw new NotFoundException(nameof(Article), request.Id);
 
             article.Title = request.Title;
             article.Content = request.Content;
@@ -43,7 +43,7 @@ namespace ImPossibleFoundation.Blog
 
             await context.SaveChangesAsync(cancellationToken);
 
-            return mapper.Map<ArticleDetailVm>(article);
+            return Unit.Value;
         }
     }
 }
