@@ -26,15 +26,23 @@ namespace ImPossibleFoundation.Controllers
         }
 
         [HttpPut("{id}")]
-        public async Task<ActionResult> UpdateArticleAsync(Guid id,[FromBody] UpdateArticleDetailsCommand command)
+        public async Task<ActionResult> UpdateArticleDetailsAsync(Guid id, [FromBody] UpdateArticleDetailsCommand command)
         {
-            
+
             await Mediator.Send(command);
             return NoContent();
         }
+        [HttpDelete("{id}")]
+        public async Task<ActionResult<Guid>> DeleteArticleAsync(Guid id)
+        {
+            return await Mediator.Send(new DeleteArticleCommand(id));
+        }
 
-        
-
+        [HttpPost("publish")]
+        public async Task<ActionResult<Guid>> PublishArticleAsync(Guid id)
+        {
+            return await Mediator.Send(new PublishArticleCommand(id));
+        }
     }
 
 }

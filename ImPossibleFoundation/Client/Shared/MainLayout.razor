@@ -10,17 +10,7 @@
         </MudMenu>
         <ThemeSelector />
     </MudAppBar>
-    <MudDrawer @bind-Open="@open" Elevation="1">
-        <MudDrawerHeader>
-            <MudText Typo="Typo.h6">Im Possible Foundation</MudText>
-        </MudDrawerHeader>
-        <MudNavMenu>
-            @foreach (var menu in menuOptions)
-            {
-                <MudNavLink Match="NavLinkMatch.All" Color="Color.Inherit" Href="@menu.Value">@menu.Key</MudNavLink>
-            }
-        </MudNavMenu>
-    </MudDrawer>
+    <NavMenu IsDrawerOpen="@open" />
     <MudMainContent Class="pt-16 ">
         <MudContainer Class="mt-6">
             @Body
@@ -32,19 +22,8 @@
 
 </MudLayout>
 
-
 @code{
     bool open = false;
-    Dictionary<string, string> menuOptions = new();
-    protected override Task OnInitializedAsync()
-    {
-        menuOptions.Add("Home", "/");
-        menuOptions.Add("About", "/about");
-        @* menuOptions.Add("Donate", "/donate"); *@
-        @* menuOptions.Add("Blog", "/blog"); *@
-        menuOptions.Add("Contact", "/contact");
-        return base.OnInitializedAsync();
-    }
 
     void ToggleDrawer()
     {

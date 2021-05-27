@@ -81,7 +81,7 @@
         "tags": [
           "Blog"
         ],
-        "operationId": "Blog_UpdateArticle",
+        "operationId": "Blog_UpdateArticleDetails",
         "parameters": [
           {
             "name": "id",
@@ -119,6 +119,37 @@
             }
           }
         }
+      },
+      "delete": {
+        "tags": [
+          "Blog"
+        ],
+        "operationId": "Blog_DeleteArticle",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "guid"
+            },
+            "x-position": 1
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "string",
+                  "format": "guid"
+                }
+              }
+            }
+          }
+        }
       }
     },
     "/api/Blog/create": {
@@ -139,6 +170,38 @@
           "required": true,
           "x-position": 1
         },
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "string",
+                  "format": "guid"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/Blog/publish": {
+      "post": {
+        "tags": [
+          "Blog"
+        ],
+        "operationId": "Blog_PublishArticle",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "query",
+            "schema": {
+              "type": "string",
+              "format": "guid"
+            },
+            "x-position": 1
+          }
+        ],
         "responses": {
           "200": {
             "description": "",
