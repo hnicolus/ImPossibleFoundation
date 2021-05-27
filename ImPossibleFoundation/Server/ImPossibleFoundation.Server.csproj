@@ -2,7 +2,9 @@
 
   <PropertyGroup>
     <TargetFramework>net5.0</TargetFramework>
-     <RootNamespace>ImPossibleFoundation</RootNamespace>
+    <AspNetCoreHostingModel>OutOfProcess</AspNetCoreHostingModel>
+    <PreserveCompilationReferences>true</PreserveCompilationReferences>
+    <RootNamespace>ImPossibleFoundation</RootNamespace>
     <UserSecretsId>ImPossibleFoundation.Server-FE61A31B-042F-4E40-BFD3-14A9C8C96440</UserSecretsId>
     		<Authors>Nicolas Maluleke</Authors>
 		<Description>Cherity Website Created in .NET 5.0 and Blazor WebAssembly.</Description>
