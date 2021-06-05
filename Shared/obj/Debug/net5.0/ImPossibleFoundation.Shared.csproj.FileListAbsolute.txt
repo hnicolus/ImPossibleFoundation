@@ -1,0 +1,12 @@
+/home/nick/projects/ImFoundation/Shared/bin/Debug/net5.0/ImPossibleFoundation.Shared.deps.json
+/home/nick/projects/ImFoundation/Shared/bin/Debug/net5.0/ImPossibleFoundation.Shared.dll
+/home/nick/projects/ImFoundation/Shared/bin/Debug/net5.0/ref/ImPossibleFoundation.Shared.dll
+/home/nick/projects/ImFoundation/Shared/bin/Debug/net5.0/ImPossibleFoundation.Shared.pdb
+/home/nick/projects/ImFoundation/Shared/obj/Debug/net5.0/ImPossibleFoundation.Shared.csproj.AssemblyReference.cache
+/home/nick/projects/ImFoundation/Shared/obj/Debug/net5.0/ImPossibleFoundation.Shared.GeneratedMSBuildEditorConfig.editorconfig
+/home/nick/projects/ImFoundation/Shared/obj/Debug/net5.0/ImPossibleFoundation.Shared.AssemblyInfoInputs.cache
+/home/nick/projects/ImFoundation/Shared/obj/Debug/net5.0/ImPossibleFoundation.Shared.AssemblyInfo.cs
+/home/nick/projects/ImFoundation/Shared/obj/Debug/net5.0/ImPossibleFoundation.Shared.csproj.CoreCompileInputs.cache
+/home/nick/projects/ImFoundation/Shared/obj/Debug/net5.0/ImPossibleFoundation.Shared.dll
+/home/nick/projects/ImFoundation/Shared/obj/Debug/net5.0/ref/ImPossibleFoundation.Shared.dll
+/home/nick/projects/ImFoundation/Shared/obj/Debug/net5.0/ImPossibleFoundation.Shared.pdb
